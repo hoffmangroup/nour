@@ -77,3 +77,41 @@ Install and test commands I used:
     
 Needed to specify --conda-frontend because by default it sounds like it uses mamba, a faster alternative to conda, but I don't know where to get that from.  
 
+# Monday October 30th, 2023  
+Looked through Mehran's www directories - found HeLa-S3 RNA dataset. 
+Set up a snakemake dataset with this dataset. Also downloaded human reference genome (hg38), HPV 16 and ENCODE blacklisted regions v2 for the run. 
+Run works for test dataset but not the HeLa-S3. I repeatedly get a variation of this error:
+
+    InputFunctionException in line 43 of /mnt/work1/users/hoffmangroup/nhanafi/isling/snakemake_rules/find_ints.smk:
+     Error:
+    ValueError: attempt to get argmax of an empty sequence
+
+Expanded error:
+
+    InputFunctionException in line 43 of /mnt/work1/users/hoffmangroup/nhanafi/isling/snakemake_rules/find_ints.smk:
+      Error:
+    ValueError: attempt to get argmax of an empty sequence
+    Wildcards:
+      outpath=out/HeLa-S3
+      dset=test-merge
+      samp=ENCFF000FSU_NuclearRNA_HeLa-S3
+      host=hg38
+      virus=hpv16
+    Traceback:
+      File "/mnt/work1/users/hoffmangroup/nhanafi/isling/snakemake_rules/find_ints.smk", line 46, in <lambda>
+      File "/mnt/work1/users/hoffmangroup/nhanafi/isling/snakemake_rules/preprocessing.smk", line 93, in get_split
+      File "/mnt/work1/users/hoffmangroup/nhanafi/isling/snakemake_rules/preprocessing.smk", line 49, in get_value_from_df
+      File "/mnt/work1/software/centos7/python/3.8.2/lib/python3.8/site-packages/pandas/core/series.py", line 2404, in idxmax
+      File "/mnt/work1/software/centos7/python/3.8.2/lib/python3.8/site-packages/pandas/core/base.py", line 657, in argmax
+      File "/mnt/work1/software/centos7/python/3.8.2/lib/python3.8/site-packages/pandas/core/nanops.py", line 93, in _f
+      File "/mnt/work1/software/centos7/python/3.8.2/lib/python3.8/site-packages/pandas/core/nanops.py", line 1096, in nanargmax
+
+I suspect I forgot to define a variable/wildcard somewhere. Working on debugging this. 
+
+
+HPV16 genome from: https://www.ebi.ac.uk/ena/browser/view/K02718  
+hg38 from: [https://genome.ucsc.edu/cgi-bin/hgTracks?db=hg38&lastVirtModeType=default&lastVirtModeExtraState=&virtModeType=default&virtMode=0&nonVirtPosition=&position=chr2%3A130592165%2D130599575&hgsid=1741388240_6bTMIFMAufhfDiaBCe4r37ZJVXVu](https://hgdownload.soe.ucsc.edu/goldenPath/melGal5/bigZips/)
+ENCODE blacklisted regions from UCSC table browser.
+
+
+Next steps: priority is to get a run going on HeLa-S3, and other datasets from the paper as well, and do a comparison of the called integration sites. 
