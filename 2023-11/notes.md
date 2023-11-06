@@ -13,3 +13,13 @@ When instead I expected a DAG like this:
 
 So I tracked back through the config, changing line by line. Issue materialized at this [line](https://github.com/aehrc/isling/blob/ee32e24891a99d00af988e24538847a82a74d31c/test/config/test.yml#L7C1-L7C1)  
 
+Also - for mysterious reasons the fastq files must be uncompressed for input! Pipeline failed otherwise (although look into this later, might be a consequence of me renaming the fastq.gz to .fastq during my troubleshooting for the above issue).  
+
+Mehran's HeLa-S3 Polyidius results can be found here for comparison:  /mnt/work1/users/hoffmangroup/mkarimzadeh/2019/hpvCTCF/HeLa-S3/RNA-seq/polyidus  
+Can't find them in the published datasets.  
+
+Found Mehran's Polyidius integrations in supplemental table 1 of the paper.  
+
+Fixed the Pysam Polyidus module issue: downgrading to pysam/0.11.1 restores compatibility with python3/3.7.2  
+
+
