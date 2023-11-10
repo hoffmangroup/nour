@@ -22,4 +22,33 @@ Found Mehran's Polyidius integrations in supplemental table 1 of the paper.
 
 Fixed the Pysam Polyidus module issue: downgrading to pysam/0.11.1 restores compatibility with python3/3.7.2  
 
+# Tuesday Nov 7th 2023  
+
+Update: found Mehran's Polyidus integrations in Supp Table 1, although I do not think this is the raw output.  
+HeLa-S3 run worked! But I ran it using HPV16 by accident (Mehran's table + literature shows that this is actually an HPV18 infected sample). Re-running using HPV18.  
+Downloaded Si-Ha RNA-seq datasets from https://www.ncbi.nlm.nih.gov/bioproject/PRJNA663801  
+Met with Emma Collier (Bratman lab) to discuss her project and viral integration tools that she uses.  
+Started putting together my slides for Thursday.  
+
+# Wednesday Nov 8th 2023  
+
+Trying to download the CasKi dataset as well. Running into a lot of issues, it keeps timing out, do not think that I will have it ready in time.  
+Put together my slides.  
+Class in the afternoon. 
+
+# Thursday Nov 9th 2023  
+
+Class in the morning. 
+Did some final presentation prep.  
+
+# Friday Nov 10th 2023  
+
+Focus today is on clean-up and documentation.  
+
+To do: 
+- [ ] Delete fastqs?
+- [ ] Write-up note of what I did and where all the directories are  
+- [ ] Check directory permissions
+- [ ] Move notebook to Valinor
+
 
