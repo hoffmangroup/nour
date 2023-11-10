@@ -48,10 +48,10 @@ Did some final presentation prep.
 Focus today is on clean-up and documentation.  
 
 To do: 
-- [ ] Delete fastqs?
-- [ ] Write-up note of what I did and where all the directories are  
+- [x] Delete fastqs?
+- [x] Write-up note of what I did and where all the directories are  
 - [ ] Check directory permissions
-- [ ] Move notebook to Valinor
+- [x] Move notebook to Valinor
 
 Notebook link: https://github.com/hoffmangroup/nour  
 
