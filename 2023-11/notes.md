@@ -26,7 +26,9 @@ Fixed the Pysam Polyidus module issue: downgrading to pysam/0.11.1 restores comp
 
 Update: found Mehran's Polyidus integrations in Supp Table 1, although I do not think this is the raw output.  
 HeLa-S3 run worked! But I ran it using HPV16 by accident (Mehran's table + literature shows that this is actually an HPV18 infected sample). Re-running using HPV18.  
+Downloaded HPV18 genome from: https://www.genome.jp/entry/-f+refseq+NC_001357  
 Downloaded Si-Ha RNA-seq datasets from https://www.ncbi.nlm.nih.gov/bioproject/PRJNA663801  
+One additional change I made was to make sure the bwa indices were pre-made and in the same directory as the genomes. It turns out that it takes HOURS to index hg38.  
 Met with Emma Collier (Bratman lab) to discuss her project and viral integration tools that she uses.  
 Started putting together my slides for Thursday.  
 
@@ -51,4 +53,5 @@ To do:
 - [ ] Check directory permissions
 - [ ] Move notebook to Valinor
 
+Notebook link: https://github.com/hoffmangroup/nour  
 
